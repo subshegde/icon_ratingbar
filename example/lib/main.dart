@@ -36,118 +36,188 @@ class _RatingPageState extends State<RatingPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_back)),
+        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         centerTitle: true,
-        title: const Text("Rating Bar Example")),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconRatingBar(
-              totalStars: 5,
-              onRatingChanged: (rating){_rating1 = rating; setState(() {});},
-              selectedIcon: Icons.star,
-              unselectedIcon: Icons.star_border,
-              initialRating: _rating1.toDouble(),
-              selectedColor: Colors.yellow,
-              unselectedColor: Colors.grey,
-              gap: 10.0,
-              containerBackgroundColor: Colors.white,
-              shadowColor: Colors.black26,
-              borderColor: Colors.yellow,
-              borderRadius: 16.0,
-              borderWidth: 2.0,
-            ),
-            const SizedBox(height: 10,),
-            IconRatingBar(
-              totalStars: 5,
-              onRatingChanged: (rating){_rating2 = rating; setState(() {});},
-              selectedIcon: Icons.pedal_bike,
-              unselectedIcon: Icons.pedal_bike_outlined,
-              initialRating: _rating2.toDouble(),
-              selectedColor: Colors.blue,
-              unselectedColor: Colors.grey,
-              gap: 10.0,
-              containerBackgroundColor: Colors.white,
-              shadowColor: Colors.black26,
-              borderColor: Colors.blue,
-              borderRadius: 16.0,
-              borderWidth: 2.0,
-            ),
-            const SizedBox(height: 10,),
-            IconRatingBar(
-              totalStars: 5,
-              onRatingChanged: (rating){_rating3 = rating; setState(() {});},
-              selectedIcon: Icons.car_rental,
-              unselectedIcon: Icons.car_rental_outlined,
-              initialRating: _rating3.toDouble(),
-              selectedColor: Colors.orange,
-              unselectedColor: Colors.grey,
-              gap: 10.0,
-              containerBackgroundColor: Colors.white,
-              shadowColor: Colors.black26,
-              borderColor: Colors.orange,
-              borderRadius: 16.0,
-              borderWidth: 2.0,
-            ),
-            const SizedBox(height: 10,),
-            IconRatingBar(
-              totalStars: 5,
-              onRatingChanged: (rating){_rating4 = rating; setState(() {});},
-              selectedIcon: Icons.money,
-              unselectedIcon: Icons.money_outlined,
-              initialRating: _rating4.toDouble(),
-              selectedColor: Colors.pink,
-              unselectedColor: Colors.grey,
-              gap: 10.0,
-              containerBackgroundColor: Colors.white,
-              shadowColor: Colors.black26,
-              borderColor: Colors.pink,
-              borderRadius: 16.0,
-              borderWidth: 2.0,
-            ),
-            const SizedBox(height: 10,),
-            IconRatingBar(
-              totalStars: 5,
-              onRatingChanged: (rating) {
-                _rating5 = rating; 
-                setState(() {});
-              },
-              selectedIcon: Icons.favorite,
-              unselectedIcon: Icons.favorite_border,
-              initialRating: _rating5.toDouble(),
-              selectedColor: Colors.red,
-              unselectedColor: Colors.grey,
-              gap: 10.0,
-              containerBackgroundColor: Colors.white,
-              shadowColor: Colors.black26,
-              borderColor: Colors.red,
-              borderRadius: 16.0,
-              borderWidth: 2.0,
-            ),
-            const SizedBox(height: 10,),
-            IconRatingBar(
-              totalStars: 5,
-              onRatingChanged: (rating) {
-                _rating6 = rating; 
-                setState(() {});
-              },
-              selectedIcon: Icons.sentiment_very_satisfied,
-              unselectedIcon: Icons.sentiment_very_dissatisfied,
-              initialRating: _rating6.toDouble(),
-              selectedColor: Colors.deepPurple,
-              unselectedColor: Colors.grey,
-              gap: 10.0,
-              containerBackgroundColor: Colors.white,
-              shadowColor: Colors.black26,
-              borderColor: Colors.deepPurple,
-              borderRadius: 16.0,
-              borderWidth: 2.0,
-            ),
-            const SizedBox(height: 10,),
-          ],
+        title: const Text("Rating Bar Example"),
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 10,),
+
+              // Heart Icon - Normal
+              IconRatingBar(
+                totalStars: 5,
+                onRatingChanged: (rating) {
+                  setState(() {
+                    _rating1 = rating;
+                  });
+                },
+                selectedIcon: Icons.favorite,
+                unselectedIcon: Icons.favorite_border,
+                initialRating: _rating1.toDouble(),
+                selectedColor: Colors.red, // Normal Red
+                unselectedColor: Colors.grey, // Grey for unselected
+                gap: 10.0,
+                containerBackgroundColor: Colors.white,
+                shadowColor: Colors.black26,
+                borderColor: Colors.red,
+                borderRadius: 16.0,
+                borderWidth: 1.0,
+              ),
+              const SizedBox(height: 10,),
+
+              // Heart Icon - Gradient
+              IconRatingBar(
+                totalStars: 5,
+                onRatingChanged: (rating) {
+                  setState(() {
+                    _rating5 = rating;
+                  });
+                },
+                selectedIcon: Icons.favorite,
+                unselectedIcon: Icons.favorite_border,
+                selectedColor: const LinearGradient(
+                  colors: [Colors.orange, Colors.pink], // Gradient for selected
+                ),
+                unselectedColor: Colors.grey, // Normal Grey for unselected
+                containerBackgroundColor: const LinearGradient(colors: [Colors.white, Colors.white]),
+                shadowColor: Colors.black.withOpacity(0.3),
+                borderColor: Colors.red,
+              ),
+              const SizedBox(height: 10,),
+
+              // Star Icon - Normal
+              IconRatingBar(
+                totalStars: 5,
+                onRatingChanged: (rating) {
+                  setState(() {
+                    _rating2 = rating;
+                  });
+                },
+                selectedIcon: Icons.star,
+                unselectedIcon: Icons.star_border,
+                initialRating: _rating2.toDouble(),
+                selectedColor: const Color.fromARGB(255, 237, 214, 4), // Normal Yellow
+                unselectedColor: Colors.grey, // Grey for unselected
+                gap: 10.0,
+                containerBackgroundColor: Colors.white,
+                shadowColor: Colors.black26,
+                borderColor: Colors.white,
+                borderRadius: 16.0,
+                borderWidth: 2.0,
+              ),
+              const SizedBox(height: 10,),
+
+              // Star Icon - Gradient
+              IconRatingBar(
+                totalStars: 5,
+                onRatingChanged: (rating) {
+                  setState(() {
+                    _rating2 = rating;
+                  });
+                },
+                selectedIcon: Icons.star,
+                unselectedIcon: Icons.star_border,
+                selectedColor: const LinearGradient(
+                  colors: [Colors.yellow, Colors.pink], // Gradient for selected
+                ),
+                unselectedColor: Colors.grey, // Normal Grey for unselected
+                containerBackgroundColor: const LinearGradient(colors: [Colors.white, Colors.white]),
+                shadowColor: Colors.black.withOpacity(0.3),
+                borderColor: Colors.white,
+              ),
+              const SizedBox(height: 10,),
+
+              // Car Icon - Normal
+              IconRatingBar(
+                totalStars: 5,
+                onRatingChanged: (rating) {
+                  setState(() {
+                    _rating3 = rating;
+                  });
+                },
+                selectedIcon: Icons.car_rental,
+                unselectedIcon: Icons.car_rental_outlined,
+                initialRating: _rating3.toDouble(),
+                selectedColor: Colors.blue, // Normal Blue
+                unselectedColor: Colors.grey, // Grey for unselected
+                gap: 10.0,
+                containerBackgroundColor: Colors.white,
+                shadowColor: Colors.black26,
+                borderColor: Colors.blue,
+                borderRadius: 16.0,
+                borderWidth: 1.0,
+              ),
+              const SizedBox(height: 10,),
+
+              // Car Icon - Gradient
+              IconRatingBar(
+                totalStars: 5,
+                onRatingChanged: (rating) {
+                  setState(() {
+                    _rating3 = rating;
+                  });
+                },
+                selectedIcon: Icons.car_rental,
+                unselectedIcon: Icons.car_rental_outlined,
+                selectedColor: const LinearGradient(
+                  colors: [Colors.blue, Colors.green], // Gradient for selected
+                ),
+                unselectedColor: Colors.grey, // Normal Grey for unselected
+                containerBackgroundColor: const LinearGradient(colors: [Colors.white, Colors.white]),
+                shadowColor: Colors.black.withOpacity(0.3),
+                borderColor: Colors.blue,
+              ),
+              const SizedBox(height: 10,),
+
+              // Sun Icon - Normal
+              IconRatingBar(
+                totalStars: 5,
+                onRatingChanged: (rating) {
+                  setState(() {
+                    _rating4 = rating;
+                  });
+                },
+                selectedIcon: Icons.wb_sunny,
+                unselectedIcon: Icons.wb_sunny_outlined,
+                initialRating: _rating4.toDouble(),
+                selectedColor: Colors.orange, // Normal Orange
+                unselectedColor: Colors.grey, // Grey for unselected
+                gap: 10.0,
+                containerBackgroundColor: Colors.white,
+                shadowColor: Colors.black26,
+                borderColor: Colors.orange,
+                borderRadius: 16.0,
+                borderWidth: 1.0,
+              ),
+              const SizedBox(height: 10,),
+
+              // Sun Icon - Gradient
+              IconRatingBar(
+                totalStars: 5,
+                onRatingChanged: (rating) {
+                  setState(() {
+                    _rating4 = rating;
+                  });
+                },
+                selectedIcon: Icons.wb_sunny,
+                unselectedIcon: Icons.wb_sunny_outlined,
+                selectedColor: const LinearGradient(
+                  colors: [Colors.orange, Colors.yellow], // Gradient for selected
+                ),
+                unselectedColor: Colors.grey, // Normal Grey for unselected
+                containerBackgroundColor: const LinearGradient(colors: [Colors.white, Colors.white]),
+                shadowColor: Colors.black.withOpacity(0.3),
+                borderColor: Colors.orange,
+              ),
+              const SizedBox(height: 10,),
+            ],
+          ),
         ),
       ),
     );
