@@ -1,4 +1,9 @@
 # Icon Rating Bar
+![icon_rating_bar1](https://github.com/user-attachments/assets/d72f66ee-fecc-4090-8f47-521e5043e993)
+
+Demo video:
+https://github.com/user-attachments/assets/c917efaa-cc24-488a-ad5a-3a5229dda829
+
 
 **Overview**: 
   - The `IconRatingBar` is a customizable Flutter widget that allows users to select a rating by tapping on icons, such as stars. It provides a flexible and highly customizable way of implementing a rating system, which can be visually enhanced by altering colors, icon types, and the appearance of the container holding the rating icons.
