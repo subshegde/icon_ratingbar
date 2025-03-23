@@ -1,7 +1,7 @@
 name: icon_ratingbar
-description: "A new Flutter package project."
+description: "The IconRatingBar is a customizable Flutter widget for creating a rating bar with icons. It allows you to set the number of stars, initial rating, and choose icons for selected/unselected states. You can customize colors, icon size, spacing, container size, and border styles. It also provides a callback to capture the selected rating."
 version: 0.0.1
-homepage:
+homepage: https://github.com/subshegde/icon_ratingbar.git
 
 environment:
   sdk: '>=3.4.4 <4.0.0'
